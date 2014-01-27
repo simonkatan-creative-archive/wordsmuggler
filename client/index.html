@@ -1,0 +1,31 @@
+
+
+<head>
+    <title>word smuggler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />  
+    <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+</head>
+<body>
+    {{>main}}
+</body>
+
+<template name="main">
+    <div id="instruct" class="ui-grid-a">
+    <H1>Word Smuggler</h1>
+    <p>Try to sneak the following word into conversation without the other player noticing</p>
+
+    <div id= "resultContainer">
+        {{>result}}
+    </div>
+
+    <div>
+    <a href="#" class="ui-btn ui-btn-inline" id="rword">Next word</a>
+    </div>
+    </div>
+</template>
+
+
+<template name ="result">
+    <h1 id='result'>{{result}}</h1>
+</template>

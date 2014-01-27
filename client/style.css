@@ -1,0 +1,53 @@
+/*---big elements---*/
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    margin: 0px 0px;
+    background: white;
+    padding: 0;
+}
+
+
+h1 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 23px;
+    margin: 0px;
+}
+
+i {
+    font-size: 20px;
+    margin: 0px;
+}
+
+
+#instruct{
+   
+    margin: 0px 20px;
+    text-align: center;
+}
+
+#resultContainer {
+    
+    height: 100px;
+    background-color: #BBBBBB;
+    margin: 20px;
+    font-color: #000000;
+    text-align: center;
+}
+
+#result{
+   line-height: 70px;
+   font-size: 50px;
+}
+
+#rword{
+    
+    max-width: 120px;
+
+}
+
