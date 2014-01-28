@@ -1,6 +1,6 @@
 Template.main.created = function(){
 
-    Session.set("result", "a test " + Math.round(Math.random() * 200));
+    RandomWord();
    
 }
 
@@ -36,19 +36,25 @@ function RandomWord() {
 }
 
 function RandomWordComplete(error, result) {
-    console.log(result.content);
-    Session.set("result", result.content);
-     $('#result').animate({ height: 'show'}); 
-     
+  
+    var content = JSON.parse(result.content);
+    Session.set("result", content.word);
+         
+ }
 
+Template.result.rendered = function(){
+   
+     $('#result').hide(); 
+     $('#result').animate({ height: 'show'});     
+    
 }
 
 Template.main.events({
     
     'click a#rword':function(){
-        Session.set("flag", Math.random());
-       $('#result').animate({ height: 'hide'});      
-        RandomWord();   
+       Session.set("flag", Math.random()); //triggers a render
+       $('#result').animate({ height: 'hide'}, 'slow', RandomWord);      
+         
      }
     
  });
