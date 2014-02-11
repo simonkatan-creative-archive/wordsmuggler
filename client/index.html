@@ -25,17 +25,17 @@
 
         <div class="form-group smallContainer">
             <label for="p_name">your name</label>
-            <input type="email" class="form-control" id="p_name" placeholder="Enter your name ..."></input>
+            <input type="text" class="form-control" id="p_name" placeholder="Enter your name ..."></input>
         </div>
       
         <div class="form-group smallContainer" >
-            <label for="o_name">your opponent's name...</label>
-            <input type="text" id="o_name" placeholder="Enter opponent's name"></input>
+            <label for="o_name">their name...</label>
+            <input type="text" class="form-control" id="o_name" placeholder="Enter your opponent's name"></input>
         </div>
 
         <div  class="form-group smallContainer">
-            <label for="o_email">your opponent's email...</label>
-            <input type="email" id="o_email" placeholder="Enter opponent's email"></input>
+            <label for="o_email">their email...</label>
+            <input type="email" class="form-control" id="o_email" placeholder="Enter your opponent's email"></input>
         </div>
         
         <div class="smallContainer">
@@ -47,11 +47,11 @@
 </template>
 
 <template name="preGameScreen">
-<div id="instruct" class="ui-grid-a">
-<H1>Word Smuggler</h1>
-<p>We're just waiting for {{o_name}} to join us ...
-</p> 
-</div>
+    <div id="instruct" class="ui-grid-a">
+        <H1>Word Smuggler</h1>
+        <p>We're just waiting for {{o_name}} to join us ...
+        </p> 
+    </div>
 </template>
 
 <template name="main">

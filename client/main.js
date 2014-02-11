@@ -14,7 +14,13 @@ Template.loginScreen.events({
         var o_name = $('#o_name').val();
         var o_email = $('#o_email').val();      
         
-        Session.set('isPlaying', true);
+        if(p_name != "" && o_name != ""){
+
+            if(o_email != ""){
+                Session.set('isPlaying', true);
+            }
+
+         }
                 
      }
 
