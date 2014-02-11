@@ -9,7 +9,7 @@ Meteor.startup(function(){
 
 Template.loginScreen.events({
 
-    'click a#start':function(){
+    'click #start':function(){
         var p_name = $('#p_name').val();
         var o_name = $('#o_name').val();
         var o_email = $('#o_email').val();      

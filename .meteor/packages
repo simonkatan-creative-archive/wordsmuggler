@@ -7,6 +7,4 @@ standard-app-packages
 preserve-inputs
 jquery
 http
-accounts-base
-accounts-ui-unstyled
-accounts-password
+bootstrap

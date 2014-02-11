@@ -1,38 +1,16 @@
-/*---big elements---*/
 
-body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 200;
-    margin: 0px 0px;
-    background: red;
-    padding: 0;
-}
-
-
-h1 {
-    font-size: 40px;
-}
-
-p {
-    font-size: 18px;
-    line-height: 23px;
-    margin: 0px;
-}
-
-i {
-    font-size: 20px;
-    margin: 0px;
+#outer{
+    margin: 20px;
+    text-align: center;
 }
 
 
 #instruct{
-   
     margin: 0px 20px;
     text-align: center;
 }
 
-#resultContainer {
-    
+#resultContainer {    
     height: 100px;
     background-color: #BBBBBB;
     margin: 20px;
@@ -45,14 +23,11 @@ i {
    font-size: 50px;
 }
 
-#rword{
-    
+#rword{  
     max-width: 120px;
-
 }
 
-
 .smallContainer{
-    margin: 40px 20px;    
+    margin-top: 15px;    
 }
 

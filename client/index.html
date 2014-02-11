@@ -1,55 +1,61 @@
 
 
 <head>
-    <title>word smuggler</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />  
-    <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+<title>word smuggler</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
-    {{#unless isPlaying}}
-        {{>loginScreen}}
-    {{/unless}}
+    <div class="container-fluid" id="outer">
+        <H1>Word Smuggler</h1>
 
-    {{#if isPlaying}}
+        {{#unless isPlaying}}
+        {{>loginScreen}}
+        {{/unless}}
+
+        {{#if isPlaying}}
         {{>main}}
-    {{/if}}
+        {{/if}}
+    </div>
 </body>
 
 <template name="loginScreen">
-    
-    <div id="instruct" class="ui-grid-a">
-        <H1>Word Smuggler</h1>
+
+    <form role="form"> 
+
+        <div class="form-group smallContainer">
+            <label for="p_name">your name</label>
+            <input type="email" class="form-control" id="p_name" placeholder="Enter your name ..."></input>
+        </div>
+      
+        <div class="form-group smallContainer" >
+            <label for="o_name">your opponent's name...</label>
+            <input type="text" id="o_name" placeholder="Enter opponent's name"></input>
+        </div>
+
+        <div  class="form-group smallContainer">
+            <label for="o_email">your opponent's email...</label>
+            <input type="email" id="o_email" placeholder="Enter opponent's email"></input>
+        </div>
+        
         <div class="smallContainer">
-           <label for="p_name">your name...</lable>
-           <input type="text" id="p_name" value=""></input>
+            <button type="submit" class="btn btn-success" id="start">Start Playing</button>
         </div>
-        <div class="smallContainer" >
-           <label for="o_name">your opponent's name...</lable>
-           <input type="text" id="o_name" value=""></input>
-        </div>
-        <div  class="smallContainer">
-           <label for="o_email">your opponent's email...</lable>
-           <input type="text" id="o_email" value=""></input>
-        </div>
-        <div>     
-             <a href="#" class="ui-btn ui-btn-inline" id="start">Start Playing</a>
-        </div>
-   </div>
+    </form>
+    </div>
 
 </template>
 
 <template name="preGameScreen">
-    <div id="instruct" class="ui-grid-a">
-        <H1>Word Smuggler</h1>
-        <p>We're just waiting for {{o_name}} to join us ...
-        </p> 
-    </div>
+<div id="instruct" class="ui-grid-a">
+<H1>Word Smuggler</h1>
+<p>We're just waiting for {{o_name}} to join us ...
+</p> 
+</div>
 </template>
 
 <template name="main">
-    <div id="instruct" class="ui-grid-a">
-    <H1>Word Smuggler</h1>
+   
     <p>Try to sneak the following word into conversation without the other player noticing</p>
 
     <div id= "resultContainer">
@@ -57,9 +63,9 @@
     </div>
 
     <div>
-    <a href="#" class="ui-btn ui-btn-inline" id="rword">Next word</a>
+        <button type="submit" class="success" id="rword">Next word</button>
     </div>
-    </div>
+
 </template>
 
 
