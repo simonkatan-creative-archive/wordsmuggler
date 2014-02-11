@@ -4,7 +4,7 @@ body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 200;
     margin: 0px 0px;
-    background: white;
+    background: red;
     padding: 0;
 }
 
@@ -49,5 +49,10 @@ i {
     
     max-width: 120px;
 
+}
+
+
+.smallContainer{
+    margin: 40px 20px;    
 }
 

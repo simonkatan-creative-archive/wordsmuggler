@@ -1,3 +1,27 @@
+
+Meteor.startup(function(){
+    
+    Session.set('isPlaying', false);
+
+});
+
+
+
+Template.loginScreen.events({
+
+    'click a#start':function(){
+        var p_name = $('#p_name').val();
+        var o_name = $('#o_name').val();
+        var o_email = $('#o_email').val();      
+        
+        Session.set('isPlaying', true);
+                
+     }
+
+});
+
+Handlebars.registerHelper('isPlaying', function(){return Session.get('isPlaying')});
+
 Template.main.created = function(){
 
     RandomWord();
