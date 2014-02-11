@@ -1,11 +1,4 @@
 
-Meteor.startup(function(){
-    
-    Session.set('isPlaying', false);
-
-});
-
-
 
 Template.loginScreen.events({
 
@@ -28,11 +21,6 @@ Template.loginScreen.events({
 
 Handlebars.registerHelper('isPlaying', function(){return Session.get('isPlaying')});
 
-Template.main.created = function(){
-
-    RandomWord();
-   
-}
 
 function RandomWord() {
   
@@ -66,9 +54,13 @@ function RandomWord() {
 }
 
 function RandomWordComplete(error, result) {
-  
-    var content = JSON.parse(result.content);
-    Session.set("result", content.word);
+ 
+    if(result){ 
+         var content = JSON.parse(result.content);
+         Session.set("result", content.word);
+    }else{
+        console.log(error);    
+    }
          
  }
 
@@ -81,7 +73,7 @@ Template.result.rendered = function(){
 
 Template.main.events({
     
-    'click a#rword':function(){
+    'click #rword':function(){
        Session.set("flag", Math.random()); //triggers a render
        $('#result').animate({ height: 'hide'}, 'slow', RandomWord);      
          

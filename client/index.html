@@ -6,6 +6,10 @@
 
 </head>
 <body>
+    {{>header}}
+</body>
+
+<template name="header">
     <div class="container-fluid" id="outer">
         <H1>Word Smuggler</h1>
 
@@ -17,7 +21,8 @@
         {{>main}}
         {{/if}}
     </div>
-</body>
+
+</template>
 
 <template name="loginScreen">
 

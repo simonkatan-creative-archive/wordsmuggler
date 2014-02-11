@@ -8,3 +8,5 @@ preserve-inputs
 jquery
 http
 bootstrap
+accounts-base
+accounts-password
