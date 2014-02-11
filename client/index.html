@@ -13,11 +13,11 @@
     <div class="container-fluid" id="outer">
         <H1>Word Smuggler</h1>
 
-        {{#unless isPlaying}}
+        {{#unless currentUser}}
         {{>loginScreen}}
         {{/unless}}
 
-        {{#if isPlaying}}
+        {{#if currentUser}}
         {{>main}}
         {{/if}}
     </div>

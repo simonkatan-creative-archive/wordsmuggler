@@ -2,17 +2,27 @@
 
 Template.loginScreen.events({
 
-    'click #start':function(){
+    'click #start':function(event){
         var p_name = $('#p_name').val();
         var o_name = $('#o_name').val();
         var o_email = $('#o_email').val();      
-        
+        event.preventDefault();    
         if(p_name != "" && o_name != ""){
 
             if(o_email != ""){
-                Session.set('isPlaying', true);
-            }
+                
+                console.log("create user");
+                var prof = {
+                                p_name: p_name, 
+                                o_name: o_name,
+                                p_un: p_name + generateRandomString(5),
+                                o_un: o_name + generateRandomString(5)
+                               };
 
+                      
+
+                Accounts.createUser({username: prof.p_un, password: "123456", profile: prof });
+            }
          }
                 
      }
@@ -21,6 +31,24 @@ Template.loginScreen.events({
 
 Handlebars.registerHelper('isPlaying', function(){return Session.get('isPlaying')});
 
+function generateRandomString(num){
+       
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < num; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    //console.log(text);
+    return text;
+
+   
+};
+
+function validateEmail(email) { 
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+}; 
 
 function RandomWord() {
   

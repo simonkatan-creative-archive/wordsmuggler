@@ -9,4 +9,6 @@ jquery
 http
 bootstrap
 accounts-base
+autopublish
+insecure
 accounts-password
